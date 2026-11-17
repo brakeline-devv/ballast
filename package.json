@@ -1,0 +1,51 @@
+{
+  "name": "ballast-mcp",
+  "version": "0.1.0",
+  "description": "Portfolio X-Ray for AI agents: an MCP server + dashboard that scores how concentrated an account really is (sector exposure, hidden correlations, beta, drawdown) and plans a rebalance that Brakeline can execute safely.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "portfolio",
+    "risk",
+    "rebalance",
+    "diversification",
+    "claude",
+    "agent",
+    "robinhood",
+    "brakeline"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brakeline-devv/ballast.git"
+  },
+  "homepage": "https://ballast.trade",
+  "bugs": {
+    "url": "https://github.com/brakeline-devv/ballast/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "ballast": "src/cli.js"
+  },
+  "files": [
+    "src",
+    "web",
+    "!web/brand/*.html",
+    "!web/brand/pfp.*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/cli.js dashboard",
+    "mcp": "node src/cli.js mcp",
+    "report": "node src/cli.js report",
+    "reset": "node src/cli.js reset",
+    "test": "node --test test/xray.test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  }
+}

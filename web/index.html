@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ballast · Portfolio X-Ray</title>
+<meta name="description" content="Portfolio X-Ray for AI agents: hidden concentration, sector exposure and correlations, plus a rebalance plan your agent runs through Brakeline.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="sections.css">
+<link rel="icon" href="favicon.ico?v=6" sizes="any"><link rel="icon" href="favicon-32.png?v=6" type="image/png" sizes="32x32"><link rel="icon" href="favicon-192.png?v=6" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="apple-touch-icon.png?v=6">
+<link rel="preload" href="media/hero.mp4" as="video" type="video/mp4">
+<link rel="canonical" href="https://ballast.trade/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ballast.trade/">
+<meta property="og:title" content="Ballast · Portfolio X-Ray for AI agents">
+<meta property="og:description" content="Every asset in. One clear risk picture. Hidden concentration, sector exposure and correlations, plus a rebalance plan your agent runs through Brakeline.">
+<meta property="og:image" content="https://ballast.trade/media/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ballast · Portfolio X-Ray for AI agents">
+<meta name="twitter:description" content="Every asset in. One clear risk picture. A rebalance plan your agent runs through Brakeline.">
+<meta name="twitter:image" content="https://ballast.trade/media/og.jpg">
+<meta name="theme-color" content="#000000">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#top"><img class="mark" src="brand/mark.png" alt=""><span class="name"></span></a>
+  <nav class="links"></nav>
+  <a class="demo"></a>
+</header>
+
+<section class="hero" id="top">
+<div class="frame">
+  <video class="bg" src="media/hero.mp4" poster="media/poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+  <div class="copy">
+    <h1></h1>
+    <p class="sub"></p>
+    <a class="start"></a>
+  </div>
+</div>
+<a class="scroll-cue" href="#how" aria-label="Scroll down"></a>
+</section>
+
+<main>
+  <section class="block" id="how">
+    <div class="wrap">
+      <p class="eyebrow reveal">How it works</p>
+      <h2 class="reveal">Every asset goes in.<br>One clear picture comes out.</h2>
+      <p class="lead reveal">Most portfolios look diversified on the app screen: twelve tickers, a few colors. X-Ray reads the actual holdings, prices them over the last six months and shows how the account <strong>really</strong> behaves. Then it plans the fix.</p>
+      <div class="flow reveal">
+        <div class="node"><small>1 · Your agent</small><h3>Reads the holdings</h3><p>Claude or Cursor reads the positions from your broker, or you paste them in the dashboard.</p></div>
+        <div class="arrow">→</div>
+        <div class="node key"><small>2 · X-Ray</small><h3>Scores the risk</h3><p>Position and sector weights, crypto share, correlations, beta, worst drop. One score from 0 to 100.</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><small>3 · Brakeline</small><h3>Runs the fix</h3><p>The rebalance orders go through Brakeline, so every single one is risk-checked before the broker.</p></div>
+      </div>
+      <div class="principles reveal">
+        <div><h4>Read-only by design</h4><p>X-Ray never sends an order. It analyses and plans; execution is a separate, guarded step.</p></div>
+        <div><h4>Every finding has numbers</h4><p>"PLTR is 26% of the account. A 30% drop in PLTR alone costs 7.8% of everything."</p></div>
+        <div><h4>Plans that respect your caps</h4><p>The rebalance never pushes another position or sector over a limit to fix the first one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="checks">
+    <div class="wrap">
+      <p class="eyebrow reveal">What it checks</p>
+      <h2 class="reveal">Eight things the app screen doesn't show.</h2>
+      <p class="lead reveal">Defaults follow common diversification rules. Move any limit with a slider in the dashboard and the plan updates live.</p>
+      <div class="checks reveal">
+        <div class="card"><div class="val">15%<span>max</span></div><code>position_size</code><p>No single stock or coin above 15% of the account.</p></div>
+        <div class="card"><div class="val">35%<span>max</span></div><code>sector_exposure</code><p>Five tech names are one bet on tech. Sectors are capped as a whole.</p></div>
+        <div class="card"><div class="val">10%<span>max</span></div><code>crypto_share</code><p>BTC, ETH, SOL and crypto stocks can fall 50% in weeks. Kept in proportion.</p></div>
+        <div class="card"><div class="val">0.7<span>corr</span></div><code>moves_together</code><p>Holdings with daily correlation of 0.7 or more are grouped and weighed as one.</p></div>
+        <div class="card"><div class="val">N<span>stocks</span></div><code>effective_positions</code><p>Twelve tickers, weighted unevenly, can behave like three. X-Ray shows the real number.</p></div>
+        <div class="card"><div class="val">β<span>vs S&amp;P 500</span></div><code>beta</code><p>How hard the account falls when the market falls.</p></div>
+        <div class="card"><div class="val">6<span>months</span></div><code>worst_drop</code><p>The deepest fall today's holdings went through over the window.</p></div>
+        <div class="card"><div class="val">3%<span>cash</span></div><code>cash_buffer</code><p>Dry powder for a dip, so you never have to sell to buy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="sample">
+    <div class="wrap">
+      <p class="eyebrow reveal">A real X-Ray</p>
+      <h2 class="reveal">A typical retail account, x-rayed.</h2>
+      <p class="lead reveal">Twelve positions, real Yahoo Finance prices, six months of history. Run it yourself: it's the demo account in the dashboard.</p>
+      <div class="sample reveal">
+        <div class="scorebox">
+          <div class="sc"><small>Before</small><b class="hi">63</b><span>High risk</span></div>
+          <div class="sarrow">→</div>
+          <div class="sc"><small>After the plan</small><b class="lo">16</b><span>Low risk</span></div>
+          <ul class="facts">
+            <li><span>Tech</span><b>72%</b></li>
+            <li><span>Biggest position</span><b>PLTR 26%</b></li>
+            <li><span>Beta vs S&amp;P 500</span><b>2.11</b></li>
+            <li><span>Volatility</span><b>37% <em>vs 14%</em></b></li>
+            <li><span>Worst drop, 6 mo</span><b>−20.7%</b></li>
+          </ul>
+        </div>
+        <div class="term"><div class="term-bar"><i></i><i></i><i></i></div><pre>
+<span class="l"><span class="you">› X-Ray my portfolio and fix it.</span></span><span class="l"><span class="c">  xray_report</span></span><span class="l"><span class="hi">  HIGH</span>  PLTR is 26.0% of the account</span><span class="l"><span class="hi">  HIGH</span>  72.3% in Tech: PLTR, AMD, AAPL, NVDA, META</span><span class="l"><span class="md">  MED </span>  AMD is 19.3% of the account</span><span class="l"><span class="md">  MED </span>  Beta 2.11: market −10% → account ≈ −21%</span><span class="l"><span class="c">  rebalance_plan</span></span><span class="l"><span class="sell">  SELL</span> 194 PLTR · 37 AMD · 47 NVDA · 24 AAPL · 6 META</span><span class="l"><span class="buy">  BUY </span> 61 VTI · 314 BND · 62 GLD</span><span class="l"><span class="lav">  risk 63 → 16</span>  · placing each order through Brakeline…</span></pre></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="brakeline">
+    <div class="wrap">
+      <p class="eyebrow reveal">Better together</p>
+      <h2 class="reveal">X-Ray finds it.<br>Brakeline guards it.</h2>
+      <p class="lead reveal"><a href="https://brakeline.trade" target="_blank" rel="noopener">Brakeline</a> is the risk proxy between your agent and your broker: loss limits, size caps, revenge-trade blocks and a kill switch. X-Ray plans the rebalance; Brakeline makes sure every order of it is safe to send.</p>
+      <div class="principles reveal">
+        <div><h4>Plan, then approve</h4><p>The agent shows you the orders and the score before and after. Nothing moves until you say so.</p></div>
+        <div><h4>Checked order by order</h4><p>Each trade passes Brakeline's daily loss limit, position cap and kill switch before it reaches the broker.</p></div>
+        <div><h4>Practice in simulation</h4><p>Apply the plan to the simulated portfolio first and watch the score drop, with zero real orders.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="developers">
+    <div class="wrap">
+      <p class="eyebrow reveal">Developers</p>
+      <h2 class="reveal">One MCP server. Six tools.</h2>
+      <p class="lead reveal">Node 20 or newer. Nothing to clone: npm fetches Ballast when your AI app starts it. Runs locally, so your holdings never leave your computer.</p>
+      <div class="install reveal">
+        <div class="code"><h3>Claude Code</h3><pre>claude mcp add ballast -- npx -y ballast-mcp
+<span class="c"># and the guard that executes the plan</span>
+claude mcp add brakeline -- npx -y brakeline</pre></div>
+        <div class="code"><h3>Claude Desktop / Cursor</h3><pre><span class="c">// mcpServers in the config file</span>
+"ballast": {
+  "command": "npx",
+  "args": ["-y", "ballast-mcp"]
+}</pre></div>
+        <div class="code"><h3>Dashboard</h3><pre>npx ballast-mcp dashboard
+<span class="c"># then open localhost:6100/app</span></pre></div>
+        <div class="code"><h3>Ask your agent</h3><pre><span class="c">"X-Ray my portfolio, propose a rebalance
+ and run it through Brakeline after I approve."</span></pre></div>
+      </div>
+      <p class="tools reveal">Tools: <code>xray_report</code><code>get_correlation</code><code>rebalance_plan</code><code>apply_rebalance_simulated</code><code>get_portfolio</code><code>set_portfolio</code> · <a href="https://www.npmjs.com/package/ballast-mcp" target="_blank" rel="noopener">npm</a> · <a href="https://github.com/brakeline-devv/ballast" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </section>
+
+  <section class="block cta-end">
+    <div class="wrap">
+      <h2 class="reveal">See what your portfolio<br>is really made of.</h2>
+      <p class="lead reveal">Start with the demo account, then paste your own holdings.</p>
+      <a class="btn-violet reveal" href="app">Open X-Ray</a>
+    </div>
+  </section>
+</main>
+
+<footer id="contact"><div class="wrap"><span>© <span class="brand-name"></span> · <a href="https://github.com/brakeline-devv/ballast" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.npmjs.com/package/ballast-mcp" target="_blank" rel="noopener">npm</a> · works with <a href="https://brakeline.trade" target="_blank" rel="noopener">Brakeline</a></span><span>Independent project, not affiliated with or endorsed by Robinhood. Analysis only, not investment advice.</span></div></footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

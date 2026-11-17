@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ballast · X-Ray</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+<link rel="icon" href="favicon.ico?v=6" sizes="any"><link rel="icon" href="favicon-32.png?v=6" type="image/png" sizes="32x32"><link rel="icon" href="favicon-192.png?v=6" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="apple-touch-icon.png?v=6">
+</head>
+<body>
+<header class="bar">
+  <a class="logo" href="/"><img class="mark" src="brand/mark.png" alt=""><span class="name">Ballast</span><span class="tag">X-Ray</span></a>
+  <span class="status" id="status">loading prices…</span>
+</header>
+
+<main class="wrap">
+  <section class="top">
+    <div class="score card">
+      <svg viewBox="0 0 120 120" class="gauge"><circle cx="60" cy="60" r="50" class="track"/><circle cx="60" cy="60" r="50" class="val" id="gauge"/></svg>
+      <div class="score-txt"><b id="score">–</b><span id="label">risk</span></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section class="card">
+    <h2>What the X-Ray found</h2>
+    <ul class="findings" id="findings"></ul>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>Sectors</h2>
+      <div class="donut-row"><svg viewBox="0 0 200 200" class="donut" id="donut"></svg><ul class="legend" id="legend"></ul></div>
+    </div>
+    <div class="card">
+      <h2>Holdings <small id="capnote"></small></h2>
+      <div class="table-scroll"><table class="holdings" id="holdings"></table></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Moves together <small>daily correlation, last ~6 months</small></h2>
+    <div class="heat-wrap"><svg id="heat" class="heat"></svg></div>
+  </section>
+
+  <section class="card">
+    <h2>Rebalance plan</h2>
+    <div class="limits" id="limits"></div>
+    <div class="beforeafter" id="ba"></div>
+    <div class="table-scroll"><table class="orders" id="orders"></table></div>
+    <div class="actions">
+      <button class="primary" id="apply">Apply to simulation</button>
+      <span class="hint">Real account: ask your agent to place these orders through <b>Brakeline</b>, so every order is risk-checked first.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Your portfolio <small>one per line: TICKER QUANTITY · crypto as BTC, ETH, SOL, DOGE</small></h2>
+    <div class="edit">
+      <textarea id="positions" spellcheck="false"></textarea>
+      <div class="edit-side">
+        <label>Cash (USD)<input id="cash" type="number" min="0" step="100"></label>
+        <button class="primary" id="save">Run X-Ray</button>
+        <button id="demo">Load demo account</button>
+        <p class="hint" id="editmsg"></p>
+      </div>
+    </div>
+  </section>
+
+  <p class="foot">Simulation and analysis only. Not investment advice. Prices: Yahoo Finance daily closes.</p>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

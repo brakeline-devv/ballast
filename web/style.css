@@ -1,0 +1,85 @@
+/* Measurements come straight from the 720x540 reference: 1u = 1 px of the reference.
+   The hero scales with the viewport height (and with the width on screens narrower than 4:3). */
+:root {
+  --u: min(calc(100vh / 540), calc(100vw / 720));
+  --bg: #000;
+  --fg: #ffffff;
+  --title: #ececec;
+  --menu: #9a99a7;
+  --sub: #a2a2a2;
+  --violet: #6a16ff;
+  --magenta: #ff2fd8; --lav: #c8b6ff; --card: #0c0b10; --card2: #13121a; --line: #22202c; --dim: #9a99a7;
+  --green: #4ee39a; --red: #ff5a7a; --amber: #ffb547;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; background: var(--bg); color: var(--fg); font-family: "Figtree", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+
+.hero { position: relative; height: 100vh; min-height: calc(540 * var(--u)); overflow: hidden; background: var(--bg); }
+
+/* Everything lives in a 720u x 540u frame centred on the screen (the original keeps a centred container,
+   so on 16:9 the portal lands at ~63% of the width). The 16:9 render starts at the frame's left edge. */
+.frame { position: absolute; top: 0; left: 50%; width: calc(720 * var(--u)); height: calc(540 * var(--u)); transform: translateX(-50%); }
+.bg {
+  position: absolute; top: 0; left: 0;
+  height: calc(540 * var(--u)); width: calc(960 * var(--u));
+  object-fit: cover; pointer-events: none;
+  /* fade the bottom of the render into the page instead of a hard cut */
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, rgba(0,0,0,.55) 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 62%, rgba(0,0,0,.55) 82%, transparent 100%);
+}
+
+/* fixed nav aligned with the hero frame; gets a dark glass background once the hero is scrolled past */
+.nav { position: fixed; z-index: 20; top: 0; left: calc(50vw - 360 * var(--u)); width: calc(720 * var(--u)); height: calc(44 * var(--u)); }
+.nav::before { content: ""; position: absolute; inset: 0 -100vw; background: rgba(0,0,0,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.06); opacity: 0; transition: opacity .3s; }
+.nav.solid::before { opacity: 1; }
+.logo { position: absolute; left: calc(39.5 * var(--u)); top: calc(11.5 * var(--u)); display: flex; align-items: center; gap: calc(7 * var(--u)); }
+.mark { width: calc(26 * var(--u)); height: calc(26 * var(--u)); flex: none; object-fit: contain; filter: drop-shadow(0 0 calc(6 * var(--u)) rgba(150, 110, 255, .35)); }
+.name { font-weight: 500; font-size: calc(12.5 * var(--u)); letter-spacing: -.005em; line-height: 1; }
+
+.links { position: absolute; top: calc(22 * var(--u)); left: 50%; transform: translate(-50%, -50%); display: flex; gap: calc(20 * var(--u)); }
+.links a { font-size: calc(9.4 * var(--u)); font-weight: 400; color: var(--menu); line-height: 1; transition: color .2s; }
+.links a.on, .links a:hover { color: var(--fg); }
+
+.demo {
+  position: absolute; right: calc(40 * var(--u)); top: calc(12 * var(--u));
+  width: calc(61 * var(--u)); height: calc(20 * var(--u)); border-radius: calc(10 * var(--u));
+  display: flex; align-items: center; justify-content: center;
+  background: var(--violet); color: #fff; font-size: calc(7.4 * var(--u)); font-weight: 500; white-space: nowrap;
+  transition: filter .2s;
+}
+.demo:hover { filter: brightness(1.15); }
+
+.copy { position: absolute; z-index: 2; left: calc(48 * var(--u)); top: calc(276 * var(--u)); }
+.copy h1 { font-weight: 560; font-size: calc(29.5 * var(--u)); line-height: calc(35 * var(--u)); letter-spacing: -.012em; color: var(--title); }
+.copy h1 span { display: block; white-space: nowrap; }
+.sub { margin-top: calc(-2 * var(--u)); width: calc(240 * var(--u)); overflow: hidden; }
+.sub span { display: block; white-space: nowrap; font-size: calc(8.6 * var(--u)); line-height: calc(15 * var(--u)); color: var(--sub); }
+.start {
+  margin-top: calc(9 * var(--u)); width: calc(90 * var(--u)); height: calc(26 * var(--u)); border-radius: calc(13 * var(--u));
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; color: #111; font-size: calc(9.3 * var(--u)); font-weight: 500;
+  transition: transform .2s;
+}
+.start:hover { transform: translateY(-1px); }
+
+/* phones / narrow portrait screens: keep the scene on the right, text over the lower-left */
+@media (max-aspect-ratio: 3/4) {
+  :root { --u: calc(100vw / 400); }
+  .hero { height: 100svh; }
+  .frame { left: 0; transform: none; width: 100%; height: 100%; }
+  .nav { left: 0; width: 100%; height: calc(54 * var(--u)); }
+  .bg { height: 100svh; width: calc(100svh * 16 / 9); left: calc(50vw - 100svh * 16 / 9 * .5); }
+  .links { display: none; }
+  .demo { right: calc(20 * var(--u)); width: calc(80 * var(--u)); height: calc(26 * var(--u)); border-radius: calc(13 * var(--u)); font-size: calc(10 * var(--u)); }
+  .logo { left: calc(20 * var(--u)); top: calc(14 * var(--u)); }
+  .copy { left: calc(20 * var(--u)); top: auto; bottom: calc(40 * var(--u)); }
+  .hero::after { content: ""; position: absolute; inset: auto 0 0 0; height: 55%; z-index: 1; background: linear-gradient(0deg, #000 30%, rgba(0,0,0,.75) 60%, transparent); pointer-events: none; }
+  .copy h1 { font-size: calc(30 * var(--u)); line-height: calc(34 * var(--u)); }
+  .sub { width: calc(330 * var(--u)); }
+  .sub { margin-top: calc(6 * var(--u)); }
+  .sub span { display: inline; white-space: normal; font-size: calc(14 * var(--u)); line-height: calc(21 * var(--u)); }
+  .start { margin-top: calc(18 * var(--u)); width: calc(140 * var(--u)); height: calc(44 * var(--u)); border-radius: calc(22 * var(--u)); font-size: calc(15 * var(--u)); }
+  .copy { bottom: calc(70 * var(--u)); }
+}
