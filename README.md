@@ -1,6 +1,6 @@
 # Ballast · Portfolio X-Ray for AI agents
 
-**Every asset in. One clear risk picture.** · [Website](https://ballastmcp.com) · [npm](https://www.npmjs.com/package/ballast-mcp) · works with [Brakeline](https://brakeline.trade)
+**Every asset in. One clear risk picture.** · [Website](https://ballastmcp.com) · [npm](https://www.npmjs.com/package/ballast-mcp) · works with [Brakeline](https://brakeline.trade) · [X](https://x.com/ballastmcp)
 
 Most portfolios look diversified on the app screen: twelve tickers, a few colors. Ballast is an MCP server and
 dashboard that reads the actual holdings, prices them over the last six months and shows how the account really
