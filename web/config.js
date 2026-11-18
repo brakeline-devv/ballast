@@ -15,7 +15,7 @@ export default {
   token: {
     ticker: "$BALLAST",
     chain: "Robinhood Chain",
-    ca: "0xacbe3f0330d764df9ce88f5ea0effc0503524234",
+    ca: "", // contract address, e.g. "0x..."
     buy: "https://www.ponsfamily.com/launchpad/", // + ca
     explorer: "https://robinhoodchain.blockscout.com/token/", // + ca
   },
