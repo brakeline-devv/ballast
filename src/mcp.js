@@ -34,7 +34,7 @@ const TOOLS = [
 ];
 
 export async function startMcp() {
-  const server = new Server({ name: "ballast", version: "0.1.0" }, { capabilities: { tools: {} } });
+  const server = new Server({ name: "ballast", version: "0.1.1" }, { capabilities: { tools: {} } });
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS.map(({ name, description, inputSchema }) => ({ name, description, inputSchema })) }));
   server.setRequestHandler(CallToolRequestSchema, async ({ params: { name, arguments: args = {} } }) => {
     const t = TOOLS.find((x) => x.name === name);

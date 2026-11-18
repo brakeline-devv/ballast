@@ -1,6 +1,6 @@
 {
   "name": "ballast-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Portfolio X-Ray for AI agents: an MCP server + dashboard that scores how concentrated an account really is (sector exposure, hidden correlations, beta, drawdown) and plans a rebalance that Brakeline can execute safely.",
   "keywords": [
     "mcp",
