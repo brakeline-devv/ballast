@@ -11,6 +11,14 @@ export default {
     { label: "GitHub", icon: "github", href: "https://github.com/brakeline-devv/ballast", ext: true },
     { label: "X", icon: "x", href: "https://x.com/ballastmcp", ext: true },
   ],
+  // token strip under the hero. Hidden while `ca` is empty.
+  token: {
+    ticker: "$BALLAST",
+    chain: "Robinhood Chain",
+    ca: "", // contract address, e.g. "0x..."
+    buy: "https://www.ponsfamily.com/launchpad/", // + ca
+    explorer: "https://robinhoodchain.blockscout.com/token/", // + ca
+  },
   navCta: { label: "Open X-Ray", href: "app" },
   title: ["Every Asset In.", "One Clear", "Risk Picture."],
   // two fixed lines, clipped to the same box width as the reference

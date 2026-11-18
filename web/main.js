@@ -26,6 +26,23 @@ if (!isLocal) document.querySelectorAll('a[href="app"]').forEach((a) => {
   else if (/X-Ray/.test(a.textContent)) a.textContent = a.classList.contains("demo") ? "Install" : "Install Ballast";
 });
 
+// token strip: shown only once a contract address is set in config.js
+{
+  const T = C.token || {}, bar = $("#token");
+  if (bar && T.ca) {
+    bar.hidden = false;
+    bar.querySelector(".tk").textContent = `${T.ticker} · ${T.chain}`;
+    bar.querySelector("code").textContent = T.ca;
+    bar.querySelector(".buy").href = T.buy + T.ca;
+    bar.querySelector(".exp").href = T.explorer + T.ca;
+    const btn = bar.querySelector(".ca"), lab = bar.querySelector(".cpy");
+    btn.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(T.ca); lab.textContent = "Copied"; } catch { lab.textContent = "Select & copy"; }
+      setTimeout(() => (lab.textContent = "Copy"), 1600);
+    });
+  }
+}
+
 // keep the loop running if the browser pauses autoplay (tab switch, low-power mode); pause it off-screen
 const v = $("video.bg");
 const play = () => v.play().catch(() => {});
