@@ -34,7 +34,7 @@
     "src",
     "web",
     "!web/brand/*.html",
-    "!web/brand/pfp.*",
+    "!web/brand/pfp.*", "!web/brand/logo-transparent.png",
     "README.md",
     "LICENSE"
   ],
